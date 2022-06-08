@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRIVE</title>
+    <!-- <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script> -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="file.css" />
+  </head>
+  <body>
+    <div id="adminName" ></div>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYjaOCOdPK2Veg1-Y31LSG0T3b8jutk8gO6g&usqp=CAU"
+              alt="logo"
+            />
+          </span>
+          <div class="text logo-text">
+            <span class="name">CLOUD GROUP</span>
+            <span class="profession">CG - Docs</span>
+          </div>
+        </div>
+
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <input id="searchButton" type="search"   placeholder="   Search..." />
+           <i class="bx bx-search icon"  id="search" onclick="searchItem()"></i>
+        
+          </li>
+
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-plus-medical icon"></i>
+                <span type="file" class="text nav-text" id="myBtn">
+                  Upload File</span
+                >
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#" id="new-folder-btn">
+                <i class="bx bx-plus-medical icon"></i>
+                <span class="text nav-text">New File</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-user icon"></i>
+                <span class="text nav-text">Shared with me</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-time-five icon"></i>
+                <span class="text nav-text">Recent</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-star icon"></i>
+                <span class="text nav-text">Starred</span>
+              </a>
+            </li>
+
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bxs-trash icon"></i>
+                <span class="text nav-text">Trash</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="mode">
+            <a href="index.html">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="modal" tabindex="-1" id="add-new-folder-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New File</h5>
+            <button
+              type="button"
+              class="btn-close modal-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="input1">
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary modal-close"
+              data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" onclick="createFiles()">Create File</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="class" id="create"></div> 
+    <script src="file.js"></script>
+  </body>
+</html>
