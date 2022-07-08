@@ -26,3 +26,17 @@ C:\Users\Priyanka\source\cg-docs_webapp\CloudGroup_WebApp\obj\Debug\netcoreapp2.
 C:\Users\Priyanka\source\cg-docs_webapp\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.dll
 C:\Users\Priyanka\source\cg-docs_webapp\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.pdb
 C:\Users\Priyanka\source\cg-docs_webapp\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.csprojAssemblyReference.cache
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\bin\Debug\netcoreapp2.1\CloudGroup_WebApp.deps.json
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\bin\Debug\netcoreapp2.1\CloudGroup_WebApp.runtimeconfig.json
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\bin\Debug\netcoreapp2.1\CloudGroup_WebApp.runtimeconfig.dev.json
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\bin\Debug\netcoreapp2.1\CloudGroup_WebApp.dll
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\bin\Debug\netcoreapp2.1\CloudGroup_WebApp.pdb
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.csprojAssemblyReference.cache
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.RazorAssemblyInfo.cache
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.RazorAssemblyInfo.cs
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.AssemblyInfoInputs.cache
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.AssemblyInfo.cs
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.RazorTargetAssemblyInfo.cache
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.dll
+C:\Users\Priyanka\source\Cg-docs\CloudGroup_WebApp\obj\Debug\netcoreapp2.1\CloudGroup_WebApp.pdb

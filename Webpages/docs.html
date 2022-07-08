@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DRIVE</title>
-    <!-- <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script> -->
+    <title>CLOUD GROUP!!</title>
     <link
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
@@ -24,7 +23,9 @@
     <link rel="stylesheet" href="docs.css" />
   </head>
   <body>
-      <div id="adminName" ></div>
+    <!-- Name of new user who login -->
+    <div id="adminName"></div>
+    <!-- Side navbar -->
     <nav class="sidebar close">
       <header>
         <div class="image-text">
@@ -39,28 +40,22 @@
             <span class="profession">CG - Docs</span>
           </div>
         </div>
-
         <i class="bx bx-chevron-right toggle"></i>
       </header>
 
       <div class="menu-bar">
         <div class="menu">
           <li class="search-box">
-            <input id="searchButton" oninput="searchItem()" type="text"   placeholder="   Search..." />
-           <i class="bx bx-search icon"></i>
-        
+            <input
+              id="searchButton"
+              oninput="searchItem()"
+              type="text"
+              placeholder="   Search..."
+            />
+            <i class="bx bx-search icon"></i>
           </li>
-
+          <!-- list of all pages e.g:folder,recent,starred,trash -->
           <ul class="menu-links">
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-plus-medical icon"></i>
-                <span type="file" class="text nav-text" id="myBtn">
-                  Upload File</span
-                >
-              </a>
-            </li>
-
             <li class="nav-link">
               <a href="#" id="new-folder-btn">
                 <i class="bx bx-plus-medical icon"></i>
@@ -69,35 +64,28 @@
             </li>
 
             <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-user icon"></i>
-                <span class="text nav-text">Shared with me</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a href="#">
+              <a href="recent.html">
                 <i class="bx bx-time-five icon"></i>
                 <span class="text nav-text">Recent</span>
               </a>
             </li>
 
             <li class="nav-link">
-              <a href="#">
+              <a href="starred.html">
                 <i class="bx bx-star icon"></i>
                 <span class="text nav-text">Starred</span>
               </a>
             </li>
 
             <li class="nav-link">
-              <a href="#">
+              <a href="trash.html">
                 <i class="bx bxs-trash icon"></i>
                 <span class="text nav-text">Trash</span>
               </a>
             </li>
           </ul>
         </div>
-
+        <!-- logout button -->
         <div class="bottom-content">
           <li class="mode">
             <a href="index.html">
@@ -105,7 +93,7 @@
               <span class="text nav-text">Logout</span>
             </a>
           </li>
-
+          <!-- Dark and light mode -->
           <li class="mode">
             <div class="sun-moon">
               <i class="bx bx-moon icon moon"></i>
@@ -120,7 +108,7 @@
         </div>
       </div>
     </nav>
-    
+    <!-- Modal Popup -->
     <div class="modal" tabindex="-1" id="add-new-folder-modal">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -134,22 +122,29 @@
             ></button>
           </div>
           <div class="modal-body">
-            <input type="text" id="input1">
-            <!-- <p>Modal body text goes here.</p> -->
+            <input type="text" id="input1" />
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary modal-close"
-              data-bs-dismiss="modal">
+              data-bs-dismiss="modal"
+            >
               Close
             </button>
-            <button type="button" class="btn btn-primary" onclick="createFolders()">Create Folder</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="createFolders()"
+            >
+              Create Folder
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="class" id="create"></div> 
+    <div class="class" id="create"></div>
     <script src="docs.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

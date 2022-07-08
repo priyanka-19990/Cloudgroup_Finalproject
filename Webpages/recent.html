@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome File Page!!</title>
+    <title>Recent Page</title>
     <link
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
@@ -23,9 +23,9 @@
     <link rel="stylesheet" href="docs.css" />
   </head>
   <body>
-    <div id="adminName" ></div>
-    <!-- side navbar -->
+    <div id="adminName"></div>
     <nav class="sidebar close">
+      <!-- Header contains logo,icons -->
       <header>
         <div class="image-text">
           <span class="image">
@@ -39,25 +39,32 @@
             <span class="profession">CG - Docs</span>
           </div>
         </div>
+
         <i class="bx bx-chevron-right toggle"></i>
       </header>
+      <!-- Sidebar -->
       <div class="menu-bar">
         <div class="menu">
           <li class="search-box">
-            <input id="searchButton" type="search"   placeholder="   Search..." />
-           <i class="bx bx-search icon"  id="search" onclick="searchItem()"></i>
+            <input
+              id="searchButton"
+              oninput="searchItem()"
+              type="text"
+              placeholder="   Search..."
+            />
+            <i class="bx bx-search icon"></i>
           </li>
-          
+
           <ul class="menu-links">
             <li class="nav-link">
               <a href="#" id="new-folder-btn">
                 <i class="bx bx-plus-medical icon"></i>
-                <span class="text nav-text">Upload File</span>
+                <span class="text nav-text">New Folder</span>
               </a>
             </li>
 
             <li class="nav-link">
-              <a href="recent.html">
+              <a href="#">
                 <i class="bx bx-time-five icon"></i>
                 <span class="text nav-text">Recent</span>
               </a>
@@ -78,13 +85,14 @@
             </li>
 
             <li class="nav-link">
-              <a href="docs.html">
-                <i class='bx bxs-left-arrow-alt bx-md icon'></i>
-                <span class="text nav-text">Back</span>
-              </a>
-            </li>
+                <a href="docs.html">
+                  <i class="bx bxs-left-arrow-alt bx-md icon bx-fade-left-hover"></i>
+                  <span class="text nav-text">Back</span>
+                </a>
+              </li>
           </ul>
         </div>
+
         <div class="bottom-content">
           <li class="mode">
             <a href="index.html">
@@ -107,12 +115,12 @@
         </div>
       </div>
     </nav>
-    <!-- folder popup -->
+    <!-- folder modal popup -->
     <div class="modal" tabindex="-1" id="add-new-folder-modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">New File</h5>
+            <h5 class="modal-title">New Folder</h5>
             <button
               type="button"
               class="btn-close modal-close"
@@ -121,22 +129,30 @@
             ></button>
           </div>
           <div class="modal-body">
-            <input type="file" id="input1">
+            <input type="text" id="input1" />
+            <!-- <p>Modal body text goes here.</p> -->
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary modal-close"
-              data-bs-dismiss="modal">
+              data-bs-dismiss="modal"
+            >
               Close
             </button>
-            <button type="button" class="btn btn-primary" onclick="createFiles()">Upload File</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="createFolders()"
+            >
+              Create Folder
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div class="class" id="create"></div> 
-    <script src="file.js"></script>
+    <div class="class" id="create"></div>
+    <script src="recent.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

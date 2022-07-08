@@ -15,7 +15,7 @@ namespace CloudGroup_WebApp.Models
         public int? CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
         public bool? IsDeleted { get; set; }
-
+        public bool? IsFavourite { get; set; }
         public Users CreatedByNavigation { get; set; }
         public ICollection<Documents> Documents { get; set; }
     }

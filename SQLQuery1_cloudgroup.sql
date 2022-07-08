@@ -31,3 +31,9 @@ CreatedBy int foreign key references users(U_Id),
 CreatedAt datetime,
 FolderId int foreign key references folders(F_Id),
 IsDeleted bit);
+
+ALTER table	folders
+Add isFavourite bit default 0 
+
+ALTER table documents
+Add isFavourite bit default 0

@@ -5,7 +5,6 @@ const body = document.querySelector("body"),
   modeSwitch = body.querySelector(".toggle-switch"),
   modeText = body.querySelector(".mode-text");
 
-//for popup of new create folder
 toggle.addEventListener("click", () => {
   sidebar.classList.toggle("close");
   const isClose = sidebar.classList.contains("close");
@@ -16,12 +15,11 @@ toggle.addEventListener("click", () => {
     classBody.style.marginLeft = "300px";
   }
 });
-
-//Search button in sidebar
+//search button
 searchBtn.addEventListener("click", () => {
   sidebar.classList.remove("close");
 });
-
+//dark mode
 modeSwitch.addEventListener("click", () => {
   body.classList.toggle("dark");
 
@@ -31,28 +29,23 @@ modeSwitch.addEventListener("click", () => {
     modeText.innerText = "Dark mode";
   }
 });
-//Popup of folder
 const modal = document.querySelector("#add-new-folder-modal");
-
 const newFolderBtn = document.querySelector("#new-folder-btn");
 newFolderBtn.addEventListener("click", (e) => {
   modal.classList.toggle("modal-open");
 });
-//for closing popup modal
+
 const closeModalButton = document.querySelectorAll(".modal-close");
 closeModalButton.forEach((item) => {
   item.addEventListener("click", (e) => {
     modal.classList.toggle("modal-open");
   });
 });
-
 const constants = {
   apiBasePath: "http://localhost:64409/api/",
 };
-
 const form = document.getElementById("input1");
 var curr = new Date();
-//Creating folder through fetching api
 function createFolders() {
   try {
     fetch(`${constants.apiBasePath}Folders`, {
@@ -63,6 +56,7 @@ function createFolders() {
         isDeleted: 0,
       }),
       method: "POST",
+      // redirect: "follow",
       headers: {
         "Content-Type": "application/json",
       },
@@ -76,32 +70,33 @@ function createFolders() {
   }
 }
 
-//Display folder on dashboard in list format
 function listFolders() {
   try {
     var create = document.getElementById("create");
     create.innerHTML = "";
     fetch(
-      `${constants.apiBasePath}Folders/` + sessionStorage.getItem("userid"),
+      `${constants.apiBasePath}Folders/Trash/` +
+        sessionStorage.getItem("userid"),
       {
         method: "GET",
       }
     )
       .then((response) => response.json())
       .then((folders) => {
+        // console.log(folders);
         folders.forEach((folder) => {
           var create = document.getElementById("create");
           var art = document.createElement("article");
           art.setAttribute("id", "section");
           const fname = folder.fName;
           const folderid = folder.fId;
-
           let doc = "";
           doc += `<i  class='bx bxs-folder-open bx-lg' style='color:rgba(23,159,226,0.78);cursor:pointer;'> </i>`;
           doc += `<button id="filebtn" onclick ="createfiles(${folderid})" style="text-decoration: none;border: 0px;cursor:pointer;background:white;width:auto;height:50px;margin-left:5px;margin-top:30px;font-weight:500;font-size:25px;color:#707070;"> ${fname}</button>`;
           doc += `<i class='bx bx-trash bx-sm' onclick="caution(${folderid})" style="cursor:pointer; float:right;margin-top:70px;margin-right:0px;color:rgba(0,0,0,0.38)"></i>`;
-          doc += `<i class='bx bx-star bx-sm' onclick="starredfolder(${folderid})" style="cursor:pointer;float:right;margin-right:3px;margin-top:70px;color:rgba(0,0,0,0.46)"></i>`;
+          doc += `<i class='bx bx-star bx-sm' onclick="starredfolder(${folderid})"style="cursor:pointer;float:right;margin-right:3px;margin-top:70px;color:rgba(0,0,0,0.46)"></i>`;
           doc += `<i class='bx bx-info-circle bx-sm' onclick='opendetails(${folder.fId},"${folder.fName}","${folder.createdBy}","${folder.createdAt}" ) ' style="float:right;cursor:pointer;margin-top:70px;margin-right:5px;color:rgba(0,0,0,0.46)"></i>`;
+          doc += `<i class='bx bx-rotate-right' onclick="Undeletefolder(${folderid})" style="float:right;cursor:pointer;margin-top:68px;margin-right:3px;font-size:26px;color:rgba(0,0,0,0.46)"></i>`;
           art.innerHTML = doc;
           create.appendChild(art);
         });
@@ -110,33 +105,34 @@ function listFolders() {
     console.log(err);
   }
 }
-//Locate to file page
+//locate to new page
 function createfiles(fId) {
   sessionStorage.setItem("fId", fId);
   window.location.href = "file.html";
 }
-
-//Name of user who logedin
 function onLoad() {
   listFolders();
   document.getElementById("adminName").innerHTML =
-    "Hi, " + sessionStorage.getItem("username") + " ! ";
+    "Hi, " + sessionStorage.getItem("username") + "!";
 }
 onLoad();
-
 //  file path
 const next = document.getElementById("hello");
 function logout() {
   sessionStorage.clear();
   window.location.href = "index.html";
 }
-
-//Searching folders in drive page
+//searching folder on current page
 function searchItem() {
   try {
     var search = document.getElementById("searchButton").value;
+
+    // console.log(search);
+
     var create = document.getElementById("create");
+
     create.innerHTML = "";
+
     fetch(
       `http://localhost:64409/api/Folders/${sessionStorage.getItem(
         "userid"
@@ -146,7 +142,10 @@ function searchItem() {
       }
     )
       .then((response) => response.json())
+
       .then((folders) => {
+        //console.log(folders);
+
         folders.forEach((folder) => {
           var create = document.getElementById("create");
           var art = document.createElement("article");
@@ -166,8 +165,7 @@ function searchItem() {
     console.log(err);
   }
 }
-
-//Sweetalert applied on alert box of delete
+// sweetalert on deleting folder
 function caution(folderId) {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -207,44 +205,38 @@ function caution(folderId) {
     });
 }
 
-//starred folder onclick of star icon
-function starredfolder(folder) {
-  var raw = "";
-  var requestOptions = {
-    method: "PUT",
-    body: raw,
-    redirect: "follow",
-  };
-  fetch("http://localhost:64409/api/Folders/Starred/" + folder, requestOptions)
-    .then((response) => response.text())
-    .then((result) => {
-      console.log(result);
-      listFolders();
-    })
-    .catch((error) => console.log("error", error));
-}
-
-//soft delete on clicking trash icon
+// hard delete folder from database
 function deletefolder(folder) {
   var raw = "";
   var requestOptions = {
+    method: "DELETE",
+    body: raw,
+    redirect: "follow",
+  };
+  var deleteurl = "http://localhost:64409/api/Folders/Delete/" + folder;
+  fetch(deleteurl, requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(listFolders()))
+    .catch((error) => console.log("error", error));
+  window.reload();
+}
+//Undelete folder from trash page
+function Undeletefolder(folder) {
+  var raw = "";
+  var requestOptions = {
     method: "PUT",
     body: raw,
     redirect: "follow",
   };
-  fetch(
-    "http://localhost:64409/api/Folders/SoftDelete/" + folder,
-    requestOptions
-  )
+  var deleteurl = "http://localhost:64409/api/Folders/Undelete/" + folder;
+  fetch(deleteurl, requestOptions)
     .then((response) => response.text())
-    .then((result) => {
-      console.log(result);
-      listFolders();
-    })
+    .then((result) => console.log(listFolders()))
     .catch((error) => console.log("error", error));
+  window.reload();
 }
 
-//viewdetails of folder
+//viewdetails
 function opendetails(folderId, foldername, createdBy, createdAt) {
   Swal.fire({
     title:

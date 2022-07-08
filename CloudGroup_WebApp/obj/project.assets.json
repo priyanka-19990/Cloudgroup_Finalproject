@@ -12818,11 +12818,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Priyanka\\source\\cg-docs_webapp\\CloudGroup_WebApp\\CloudGroup_WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\Priyanka\\source\\Cg-docs\\CloudGroup_WebApp\\CloudGroup_WebApp.csproj",
       "projectName": "CloudGroup_WebApp",
-      "projectPath": "C:\\Users\\Priyanka\\source\\cg-docs_webapp\\CloudGroup_WebApp\\CloudGroup_WebApp.csproj",
+      "projectPath": "C:\\Users\\Priyanka\\source\\Cg-docs\\CloudGroup_WebApp\\CloudGroup_WebApp.csproj",
       "packagesPath": "C:\\Users\\Priyanka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Priyanka\\source\\cg-docs_webapp\\CloudGroup_WebApp\\obj\\",
+      "outputPath": "C:\\Users\\Priyanka\\source\\Cg-docs\\CloudGroup_WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
